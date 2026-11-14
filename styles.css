@@ -35,3 +35,10 @@
     transform: translateZ(0) !important;
   }
 }
+
+/* Circular TRANSFER TO UK mark in the header and footer */
+.brand--round{min-width:0;gap:0;flex:0 0 auto}
+.brand__logo{display:block;width:68px;height:66px;object-fit:contain;filter:drop-shadow(0 5px 14px rgba(0,0,0,.2))}
+.brand--footer .brand__logo{width:70px;height:68px}
+@media(max-width:800px){.brand--round{min-width:0}.brand__logo{width:60px;height:58px}.brand--footer .brand__logo{width:66px;height:64px}}
+@media(max-width:420px){.brand__logo{width:56px;height:54px}.brand--footer .brand__logo{width:62px;height:60px}}
