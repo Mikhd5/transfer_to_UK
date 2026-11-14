@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900"><image width="900" height="900" href="data:image/png;base64,PLACEHOLDER"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<defs>
+ <radialGradient id="disc" cx="38%" cy="28%" r="78%"><stop stop-color="#0d3b78"/><stop offset=".52" stop-color="#061b3b"/><stop offset="1" stop-color="#030d20"/></radialGradient>
+ <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00c8ff"/><stop offset=".35" stop-color="#0758ff"/><stop offset=".63" stop-color="#163c83"/><stop offset="1" stop-color="#ffc12c"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff16a"/><stop offset=".45" stop-color="#ffbd00"/><stop offset="1" stop-color="#d98200"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#bfc8d6"/></linearGradient>
+ <clipPath id="flag"><path d="M285 182 Q390 108 493 166 L522 216 Q445 251 357 226Z"/></clipPath>
+ <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<circle cx="300" cy="300" r="274" fill="none" stroke="url(#rim)" stroke-width="16"/>
+<circle cx="300" cy="300" r="264" fill="url(#disc)" stroke="#102f5a" stroke-width="3"/>
+<path d="M103 318 Q188 224 330 217 Q420 202 505 246" fill="none" stroke="#008dff" stroke-width="22" opacity=".9"/>
+<path d="M105 337 Q70 398 122 447 Q242 520 442 445 Q330 493 184 458 Q115 442 105 386Z" fill="url(#gold)"/>
+<path d="M275 184 Q394 100 497 164 Q527 181 535 213 Q510 243 480 251 Q433 193 355 210 Q306 214 275 184Z" fill="#071b39" stroke="#1689ff" stroke-width="5"/>
+<g clip-path="url(#flag)" transform="rotate(-8 405 190)">
+ <rect x="280" y="130" width="270" height="130" fill="#174b9a"/>
+ <path d="M280 130L550 260M550 130L280 260" stroke="#fff" stroke-width="34"/>
+ <path d="M280 130L550 260M550 130L280 260" stroke="#e21b2d" stroke-width="15"/>
+ <path d="M415 120V270M270 195H560" stroke="#fff" stroke-width="48"/>
+ <path d="M415 120V270M270 195H560" stroke="#e21b2d" stroke-width="24"/>
+</g>
+<text x="300" y="305" fill="url(#silver)" stroke="#09162b" stroke-width="3" paint-order="stroke" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="72" font-weight="900" font-style="italic" letter-spacing="-3">TRANSFER</text>
+<text x="300" y="385" fill="url(#silver)" stroke="#09162b" stroke-width="3" paint-order="stroke" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="83" font-weight="900" font-style="italic" letter-spacing="-2">TO <tspan fill="url(#gold)">UK</tspan></text>
+</svg>
