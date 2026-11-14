@@ -103,7 +103,8 @@
         button.setAttribute('aria-pressed', String(active));
       });
       if (parcelArt) parcelArt.dataset.kind = selectedKind;
-      if (visualDestination) visualDestination.textContent = `TO ${selectedDestination}`.toLocaleUpperCase('uk-UA');
+      const destinationEnglish = { 'Лондон':'LONDON', 'Кентербері':'CANTERBURY', 'Мейдстоун':'MAIDSTONE' };
+      if (visualDestination) visualDestination.textContent = `TO ${destinationEnglish[selectedDestination] || selectedDestination.toUpperCase()}`;
       if (parcelChoice) parcelChoice.textContent = `${selectedKindLabel} · ${selectedDestination}`;
       if (parcelRouteLabel) parcelRouteLabel.textContent = `Долина → ${selectedDestination}`;
     };
@@ -127,7 +128,7 @@
         `Тип відправлення: ${selectedKindLabel}.`,
         '',
         'Підкажіть, будь ласка, чи можлива доставка, а також умови та вартість.'
-      ].join('\\n');
+      ].join('\n');
       const url = `https://wa.me/380988536842?text=${encodeURIComponent(message)}`;
       const opened = window.open(url, '_blank');
       if (opened) opened.opener = null;
