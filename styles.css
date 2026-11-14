@@ -43,3 +43,10 @@
 .brand--footer .brand__emblem{width:64px;height:64px;flex-basis:64px}
 @media(max-width:800px){.brand__emblem{width:54px;height:54px;flex-basis:54px}.brand--footer .brand__emblem{width:58px;height:58px;flex-basis:58px}}
 @media(max-width:420px){.brand__emblem{width:50px;height:50px;flex-basis:50px}}
+
+/* Full circular brand artwork — exact supplied emblem */
+.brand--emblem-only{min-width:0;width:74px;height:74px;flex:0 0 74px;gap:0;display:flex;align-items:center;justify-content:center}
+.brand--emblem-only .brand__emblem{width:100%;height:100%;flex:0 0 100%;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.22))}
+.site-footer .brand--emblem-only{width:82px;height:82px;flex-basis:82px}
+@media(max-width:800px){.site-header .brand--emblem-only{width:68px;height:68px;flex-basis:68px}.site-footer .brand--emblem-only{width:76px;height:76px;flex-basis:76px}}
+@media(max-width:420px){.site-header .brand--emblem-only{width:64px;height:64px;flex-basis:64px}}
