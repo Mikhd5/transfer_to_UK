@@ -129,8 +129,9 @@
         'Підкажіть, будь ласка, чи можлива доставка, а також умови та вартість.'
       ].join('\\n');
       const url = `https://wa.me/380988536842?text=${encodeURIComponent(message)}`;
-      const opened = window.open(url, '_blank', 'noopener,noreferrer');
-      if (!opened) window.location.href = url;
+      const opened = window.open(url, '_blank');
+      if (opened) opened.opener = null;
+      else window.location.href = url;
     });
     syncParcelSelection();
   }
