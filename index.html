@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="london-poster.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -117,7 +118,7 @@
           </div>
           <div class="route-map__connector" aria-hidden="true"><div class="route-map__path"><i></i><i></i><i></i></div><span class="route-map__plane">↗</span><small>EUROPEAN ROUTE</small></div>
           <div class="route-map__country route-map__country--uk">
-            <div class="route-map__label"><span class="flag flag--uk">✦</span><div><small>МІСТА В АНГЛІЇ</small><b>United Kingdom</b></div></div>
+            <div class="route-map__label"><span class="flag flag--uk" role="img" aria-label="Прапор Великої Британії"><svg viewBox="0 0 42 42" aria-hidden="true" focusable="false"><rect width="42" height="42" fill="#012169"/><path d="M-5 -5L47 47M47 -5L-5 47" stroke="#fff" stroke-width="10"/><path d="M-5 -5L47 47M47 -5L-5 47" stroke="#C8102E" stroke-width="4"/><path d="M21 0V42M0 21H42" stroke="#fff" stroke-width="13"/><path d="M21 0V42M0 21H42" stroke="#C8102E" stroke-width="6"/></svg></span><div><small>МІСТА В АНГЛІЇ</small><b>United Kingdom</b></div></div>
             <div class="route-city"><span class="route-city__dot"></span><b>Лондон</b><small>UK / 01</small></div>
             <div class="route-city"><span class="route-city__dot"></span><b>Кентербері</b><small>UK / 02</small></div>
             <div class="route-city"><span class="route-city__dot"></span><b>Мейдстоун</b><small>UK / 03</small></div>
@@ -132,7 +133,7 @@
         <div class="parcel-orbit parcel-orbit--one"></div><div class="parcel-orbit parcel-orbit--two"></div>
         <div class="parcel-art" id="parcelArt" data-kind="box" aria-hidden="true">
           <div class="parcel-art__envelope"><span></span></div>
-          <div class="parcel-box"><span class="parcel-box__tape"></span><span class="parcel-box__seal">T<br>UK</span></div>
+          <div class="parcel-box"><span class="parcel-box__tape"></span><span class="parcel-box__label">TRANSFER<br>TO UK</span><span class="parcel-box__seal">T<br>UK</span></div>
           <div class="parcel-art__bag"><i></i></div>
         </div>
         <div class="parcel-stamp"><span>FROM DOLYNA</span><i></i><b id="parcelVisualDestination">TO LONDON</b></div>
@@ -219,7 +220,7 @@
         <div class="contacts-section__heading reveal"><p class="section-kicker">05 — ЗВ'ЯЗОК</p><h2>Людина на зв'язку.<br><em>Маршрут у фокусі.</em></h2></div>
         <div class="contacts-grid reveal">
           <a class="contact-pill" href="tel:+380988536842"><span class="contact-pill__flag flag--ua"><i></i></span><span><small>УКРАЇНА</small><b>+380 988 536 842</b></span><span class="contact-pill__arrow">↗</span></a>
-          <a class="contact-pill" href="tel:+447864894788"><span class="contact-pill__flag flag--uk">✦</span><span><small>ВЕЛИКА БРИТАНІЯ</small><b>+44 7864 894 788</b></span><span class="contact-pill__arrow">↗</span></a>
+          <a class="contact-pill" href="tel:+447864894788"><span class="contact-pill__flag flag--uk" role="img" aria-label="Прапор Великої Британії"><svg viewBox="0 0 42 42" aria-hidden="true" focusable="false"><rect width="42" height="42" fill="#012169"/><path d="M-5 -5L47 47M47 -5L-5 47" stroke="#fff" stroke-width="10"/><path d="M-5 -5L47 47M47 -5L-5 47" stroke="#C8102E" stroke-width="4"/><path d="M21 0V42M0 21H42" stroke="#fff" stroke-width="13"/><path d="M21 0V42M0 21H42" stroke="#C8102E" stroke-width="6"/></svg></span><span><small>ВЕЛИКА БРИТАНІЯ</small><b>+44 7864 894 788</b></span><span class="contact-pill__arrow">↗</span></a>
         </div>
         <div class="contacts-bottom reveal"><span>VIBER · WHATSAPP · TELEGRAM</span><a href="https://wa.me/380988536842" target="_blank" rel="noopener">Написати Василю у WhatsApp <b>↗</b></a><span>ШВИДКО · БЕЗПЕЧНО · КОМФОРТНО</span></div>
       </div>
