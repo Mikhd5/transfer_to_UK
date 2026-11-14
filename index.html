@@ -18,51 +18,60 @@
 <body>
   <div class="preloader" id="preloader" role="status" aria-label="Завантаження TRANSFER TO UK">
     <div class="preloader__content">
-      <div class="preloader__art" role="img" aria-label="TRANSFER TO UK — логотип із британським прапором та мікроавтобусом">
-        <svg class="preloader__logo" viewBox="0 0 720 292" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <div class="preloader__art" role="img" aria-label="TRANSFER TO UK — емблема з прапором Великої Британії">
+        <svg class="preloader__logo" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient id="logo-blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1689ef"/><stop offset="1" stop-color="#073d82"/></linearGradient>
-            <linearGradient id="logo-gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe18b"/><stop offset=".55" stop-color="#d9a43e"/><stop offset="1" stop-color="#a66b1c"/></linearGradient>
-            <linearGradient id="van-body" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#48586a"/><stop offset=".42" stop-color="#101d2c"/><stop offset="1" stop-color="#050b13"/></linearGradient>
-            <linearGradient id="van-glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ca9c2"/><stop offset=".45" stop-color="#263b51"/><stop offset="1" stop-color="#0a1421"/></linearGradient>
-            <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="7"/><feOffset dy="7"/><feComponentTransfer><feFuncA type="linear" slope=".35"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="ttuk-blue" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#168de9"/><stop offset=".5" stop-color="#0868c7"/><stop offset="1" stop-color="#063d80"/>
+            </linearGradient>
+            <linearGradient id="ttuk-gold" x1="0" y1="0" x2=".2" y2="1">
+              <stop stop-color="#ffe38c"/><stop offset=".48" stop-color="#e4b44e"/><stop offset="1" stop-color="#a96e20"/>
+            </linearGradient>
+            <linearGradient id="ttuk-silver" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#fff"/><stop offset=".58" stop-color="#e6e9ed"/><stop offset="1" stop-color="#aeb7c2"/>
+            </linearGradient>
+            <linearGradient id="ttuk-navy" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#102b4b"/><stop offset=".55" stop-color="#07192d"/><stop offset="1" stop-color="#030d1b"/>
+            </linearGradient>
+            <filter id="ttuk-shadow" x="-15%" y="-20%" width="130%" height="150%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+              <feOffset dy="5"/>
+              <feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <clipPath id="ttuk-flag-clip">
+              <path d="M470 83 C523 24 620 18 689 67 C670 123 619 153 550 143 C508 137 482 114 470 83Z"/>
+            </clipPath>
           </defs>
-          <g class="preloader__emblem" filter="url(#logo-shadow)">
-            <path d="M62 116C107 40 215 20 372 24h145c-66 16-86 44-107 82H62Z" fill="url(#logo-blue)"/>
-            <path d="M35 191c53 62 149 75 270 70l165-4c-75-20-112-43-144-78H35Z" fill="url(#logo-gold)"/>
-            <path d="M77 115c38-54 117-75 257-75h173c-51 20-67 43-91 73H77Z" fill="#07182c"/>
-            <path d="M65 184c40 49 121 61 236 59l126-3c-65-18-100-39-127-67H65Z" fill="#07182c"/>
-            <text x="82" y="130" fill="#f5f7fa" font-size="72" font-weight="900" font-style="italic" letter-spacing="-3" font-family="Arial,Helvetica,sans-serif">TRANSFER</text>
-            <text x="116" y="207" fill="#f5f7fa" font-size="72" font-weight="900" font-style="italic" letter-spacing="-3" font-family="Arial,Helvetica,sans-serif">TO</text>
-            <text x="263" y="207" fill="url(#logo-gold)" font-size="76" font-weight="900" font-style="italic" letter-spacing="-3" font-family="Arial,Helvetica,sans-serif">UK</text>
-            <g transform="translate(464 7) rotate(-4)">
-              <path d="M0 63Q100-7 198 54Q168 104 120 111Q53 110 0 63Z" fill="#06172a" stroke="#dce8f6" stroke-width="3"/>
-              <path d="M13 62Q100 4 184 55" fill="none" stroke="#fff" stroke-width="28"/>
-              <path d="M13 62Q100 4 184 55" fill="none" stroke="#c82036" stroke-width="13"/>
-              <path d="M65 28L125 92M120 25L65 96" stroke="#fff" stroke-width="13"/>
-              <path d="M65 28L125 92M120 25L65 96" stroke="#c82036" stroke-width="5"/>
-              <path d="M92 18V104M27 60H175" stroke="#fff" stroke-width="15"/>
-              <path d="M92 18V104M27 60H175" stroke="#c82036" stroke-width="6"/>
+
+          <g filter="url(#ttuk-shadow)">
+            <!-- The two sweeping brand ribbons from the supplied reference -->
+            <path d="M26 172 C66 80 166 38 330 38 L590 39 C544 53 501 78 466 108 L43 190Z" fill="url(#ttuk-blue)"/>
+            <path d="M25 219 C65 293 176 321 340 319 L565 301 C501 286 451 260 412 225 L25 202Z" fill="url(#ttuk-gold)"/>
+
+            <!-- Deep navy emblem body -->
+            <path d="M48 177 C91 93 183 66 322 66 L590 69 C555 99 532 143 501 194 C453 268 347 293 204 282 C121 276 67 242 48 208Z"
+                  fill="url(#ttuk-navy)" stroke="#1c3551" stroke-width="2"/>
+
+            <!-- Main wordmark -->
+            <text x="66" y="178" fill="url(#ttuk-silver)" font-family="Arial, Helvetica, sans-serif"
+                  font-size="91" font-style="italic" font-weight="900" letter-spacing="-4">TRANSFER</text>
+            <text x="116" y="270" fill="url(#ttuk-silver)" font-family="Arial, Helvetica, sans-serif"
+                  font-size="91" font-style="italic" font-weight="900" letter-spacing="-4">TO</text>
+            <text x="285" y="270" fill="url(#ttuk-gold)" font-family="Arial, Helvetica, sans-serif"
+                  font-size="99" font-style="italic" font-weight="900" letter-spacing="-4">UK</text>
+
+            <!-- Curved Union Jack ribbon, placed exactly at the upper-right of the emblem -->
+            <g clip-path="url(#ttuk-flag-clip)">
+              <rect x="458" y="16" width="246" height="150" fill="#173d7e"/>
+              <path d="M455 33 L705 154 M455 154 L705 33" stroke="#fff" stroke-width="35"/>
+              <path d="M455 33 L705 154 M455 154 L705 33" stroke="#c9253b" stroke-width="15"/>
+              <path d="M578 8 L578 164 M448 89 L708 89" stroke="#fff" stroke-width="42"/>
+              <path d="M578 8 L578 164 M448 89 L708 89" stroke="#c9253b" stroke-width="19"/>
             </g>
-          </g>
-          <g class="preloader__van" transform="translate(438 122)">
-            <ellipse cx="137" cy="135" rx="132" ry="13" fill="#000" opacity=".32"/>
-            <path d="M20 52Q28 29 58 22L137 17Q163 17 179 38L213 83L229 111L227 128H10L8 91Z" fill="url(#van-body)" stroke="#8195a8" stroke-width="2"/>
-            <path d="M55 31L132 25Q151 25 165 43L185 76H48Z" fill="url(#van-glass)" stroke="#91a7bb" stroke-width="2"/>
-            <path d="M139 26Q156 28 168 46L188 76H142Z" fill="#15283d" stroke="#7c94aa" stroke-width="1.5"/>
-            <path d="M12 87L44 78H190L216 94L226 111H9Z" fill="#182637"/>
-            <path d="M17 93L40 88L48 99H15Z" fill="#e6f2ff"/>
-            <path d="M197 88L216 98L221 108H199Z" fill="#f8d78b"/>
-            <path d="M224 90L236 95L236 108L224 106Z" fill="#d84b43"/>
-            <path d="M17 111H226" stroke="#a9bac8" stroke-width="2" opacity=".7"/>
-            <path d="M30 43V80M139 26V81M188 78V111" stroke="#72879b" stroke-width="1.5"/>
-            <path d="M9 104H228" stroke="#050a11" stroke-width="4"/>
-            <g fill="#05090f" stroke="#8c9aa8" stroke-width="4">
-              <circle cx="55" cy="119" r="21"/><circle cx="55" cy="119" r="9" fill="#9caab6"/>
-              <circle cx="187" cy="119" r="21"/><circle cx="187" cy="119" r="9" fill="#9caab6"/>
-            </g>
-            <path d="M55 103L55 135M39 119H71M187 103V135M171 119H203" stroke="#d3dce4" stroke-width="2"/>
-            <path class="preloader__headlight" d="M11 91L38 86L46 99L13 102Z" fill="#fff4cb"/>
+            <path d="M470 83 C523 24 620 18 689 67 C670 123 619 153 550 143 C508 137 482 114 470 83Z"
+                  fill="none" stroke="#dbe6f3" stroke-width="3"/>
+            <path d="M479 82 C530 36 616 31 675 69" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
           </g>
         </svg>
       </div>
