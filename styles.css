@@ -98,6 +98,6 @@
 
 
 /* Crisp, brighter cached logo on the loading screen */
-.preloader__art{width:min(76vw,480px);}
+.preloader__art{width:min(76vw,320px);}
 .preloader__logo{width:100%;height:auto;filter:brightness(1.18) contrast(1.08) saturate(1.12) drop-shadow(0 12px 24px rgba(0,0,0,.24));}
-@media(max-width:480px){.preloader__art{width:min(88vw,340px);}.preloader__logo{filter:brightness(1.14) contrast(1.06) saturate(1.1) drop-shadow(0 9px 18px rgba(0,0,0,.22));}}
+@media(max-width:480px){.preloader__art{width:min(82vw,260px);}.preloader__logo{filter:brightness(1.14) contrast(1.06) saturate(1.1) drop-shadow(0 9px 18px rgba(0,0,0,.22));}}
