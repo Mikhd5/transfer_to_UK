@@ -16,12 +16,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="preloader" id="preloader" aria-label="Завантаження сайту">
-    <div class="preloader__mark">
-      <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24"/><path d="M13 34c8-13 18-15 30-12M35 14l8 8-11 2"/></svg>
+  <div class="preloader" id="preloader" role="status" aria-label="Завантаження TRANSFER TO UK">
+    <div class="preloader__content">
+      <div class="preloader__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M10 39C17 24 28 17 40 20c6 1 10 5 14 11"/>
+          <path d="M10 47c9-10 18-13 27-11"/>
+          <circle class="preloader__point" cx="52" cy="31" r="3.5"/>
+        </svg>
+      </div>
+      <div class="preloader__word">TRANSFER <span>TO UK</span></div>
+      <div class="preloader__caption">UKRAINE <i></i> UNITED KINGDOM</div>
+      <div class="preloader__track" aria-hidden="true"><i></i></div>
     </div>
-    <div class="preloader__word">TRANSFER <span>TO UK</span></div>
-    <div class="preloader__track"><i></i></div>
   </div>
 
   <header class="site-header" id="top">
@@ -129,25 +136,55 @@
     </section>
 
     <section class="parcel-section section" id="parcels">
-      <div class="parcel-section__visual reveal">
+      <div class="parcel-section__visual reveal" aria-label="Ілюстрація маршруту посилки з Долини до Великої Британії">
         <div class="parcel-orbit parcel-orbit--one"></div><div class="parcel-orbit parcel-orbit--two"></div>
-        <div class="parcel-box"><span class="parcel-box__tape"></span><span class="parcel-box__seal">T<br>UK</span></div>
-        <div class="parcel-stamp">FROM UA <span>✳</span> TO UK</div>
+        <div class="parcel-art" id="parcelArt" data-kind="box" aria-hidden="true">
+          <div class="parcel-art__envelope"><span></span></div>
+          <div class="parcel-box"><span class="parcel-box__tape"></span><span class="parcel-box__seal">T<br>UK</span></div>
+          <div class="parcel-art__bag"><i></i></div>
+        </div>
+        <div class="parcel-stamp"><span>FROM DOLYNA</span><i></i><b id="parcelVisualDestination">TO LONDON</b></div>
+        <div class="parcel-visual__caption"><span></span> YOUR PARCEL ROUTE</div>
       </div>
       <div class="parcel-section__copy reveal">
         <p class="section-kicker">03 — ВІДПРАВЛЕННЯ ПОСИЛОК</p>
         <h2>Нехай відстань<br>не заважає <em>передати своє.</em></h2>
-        <p class="parcel-section__lead">Для відправлення посилок у банері вказано відділення Нової пошти в місті Долина.</p>
+        <p class="parcel-section__lead">Оберіть місто у Великій Британії та тип відправлення — підготуємо повідомлення, щоб уточнити можливість, умови й вартість доставки.</p>
         <div class="parcel-details">
-          <div class="parcel-details__row"><span class="parcel-details__icon">⌖</span><span><small>МІСТО</small><b>Долина</b></span></div>
+          <div class="parcel-details__row"><span class="parcel-details__icon">⌖</span><span><small>МІСТО ВІДПРАВЛЕННЯ</small><b>Долина</b></span></div>
           <div class="parcel-details__row"><span class="parcel-details__icon">↗</span><span><small>ВІДДІЛЕННЯ</small><b>Нова пошта №1</b></span></div>
           <div class="parcel-details__row"><span class="parcel-details__icon">◎</span><span><small>ОДЕРЖУВАЧ</small><b>Беляк Василь</b></span></div>
           <div class="parcel-details__row"><span class="parcel-details__icon">⌕</span><span><small>ТЕЛЕФОН</small><b>+380 988 536 842</b></span></div>
         </div>
-        <a class="button button--outline" href="https://wa.me/380988536842?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D0%B8%20%D1%96%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%8E%20%D0%BF%D1%80%D0%BE%20%D0%B2%D1%96%D0%B4%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%BF%D0%BE%D1%81%D0%B8%D0%BB%D0%BA%D0%B8." target="_blank" rel="noopener">Уточнити відправлення <span class="button__arrow">↗</span></a>
+
+        <div class="parcel-config" id="parcelConfig">
+          <div class="parcel-config__heading"><span>01 / МІСТО ПРИБУТТЯ</span><small>ОБЕРІТЬ МІСТО</small></div>
+          <div class="parcel-destinations" role="group" aria-label="Місто прибуття посилки">
+            <button class="parcel-chip is-active" type="button" data-destination="Лондон" aria-pressed="true">Лондон</button>
+            <button class="parcel-chip" type="button" data-destination="Кентербері" aria-pressed="false">Кентербері</button>
+            <button class="parcel-chip" type="button" data-destination="Мейдстоун" aria-pressed="false">Мейдстоун</button>
+          </div>
+          <div class="parcel-config__heading parcel-config__heading--type"><span>02 / ЩО ПЕРЕДАЄТЕ?</span><small>ТИП ВІДПРАВЛЕННЯ</small></div>
+          <div class="parcel-types" role="group" aria-label="Тип відправлення">
+            <button class="parcel-type" type="button" data-kind="documents" data-label="Документи" aria-pressed="false">
+              <span class="parcel-type__icon parcel-type__icon--document"><i></i></span><b>Документи</b>
+            </button>
+            <button class="parcel-type" type="button" data-kind="items" data-label="Особисті речі" aria-pressed="false">
+              <span class="parcel-type__icon parcel-type__icon--bag"><i></i></span><b>Особисті речі</b>
+            </button>
+            <button class="parcel-type is-active" type="button" data-kind="box" data-label="Коробка / посилка" aria-pressed="true">
+              <span class="parcel-type__icon parcel-type__icon--box"><i></i></span><b>Коробка</b>
+            </button>
+          </div>
+          <div class="parcel-config__summary" aria-live="polite">
+            <span><small>ВАШ ВИБІР</small><b id="parcelChoice">Коробка / посилка · Лондон</b><em id="parcelRouteLabel">Долина → Лондон</em></span>
+            <span class="parcel-config__summary-mark" aria-hidden="true">↗</span>
+          </div>
+          <button class="button button--primary parcel-config__submit" id="parcelSubmit" type="button">Уточнити відправлення <span class="button__arrow">↗</span></button>
+          <p class="parcel-config__note">Вартість, терміни та можливість доставки підтверджуються перевізником індивідуально.</p>
+        </div>
       </div>
     </section>
-
     <section class="promise-section">
       <div class="promise-section__inner reveal">
         <div class="promise-section__eyebrow"><span></span> TRANSFER TO UK / APPROACH</div>
