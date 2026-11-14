@@ -95,3 +95,9 @@
 }
 @media(max-width:800px){.hero__desktop-video{display:none;}}
 @media(prefers-reduced-motion:reduce){.hero__desktop-video video{display:none;}}
+
+
+/* Crisp, brighter cached logo on the loading screen */
+.preloader__art{width:min(76vw,620px);}
+.preloader__logo{width:100%;height:auto;filter:brightness(1.18) contrast(1.08) saturate(1.12) drop-shadow(0 12px 24px rgba(0,0,0,.24));}
+@media(max-width:480px){.preloader__art{width:min(88vw,360px);}.preloader__logo{filter:brightness(1.14) contrast(1.06) saturate(1.1) drop-shadow(0 9px 18px rgba(0,0,0,.22));}}
