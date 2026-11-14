@@ -80,3 +80,18 @@
   .form-field,.form-field--full{grid-column:1/-1;width:100%;max-width:100%}
   .booking-form{min-width:0}
 }
+
+
+/* Desktop cinematic background video. Mobile keeps its own lightweight video. */
+@media(min-width:801px){
+  .hero{background:#061426;}
+  .hero__desktop-video{position:absolute;z-index:0;inset:0;display:block;overflow:hidden;}
+  .hero__desktop-video video{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.76) saturate(.84) contrast(1.04);}
+  .hero:before{z-index:1;background:linear-gradient(90deg,rgba(5,17,33,.88) 0%,rgba(5,17,33,.68) 42%,rgba(5,17,33,.34) 100%);}
+  .hero__inner,.hero__bottom{z-index:2;}
+  .hero__inner{grid-template-columns:minmax(0,1fr);}
+  .hero__copy{max-width:700px;}
+  .hero__visual{display:none;}
+}
+@media(max-width:800px){.hero__desktop-video{display:none;}}
+@media(prefers-reduced-motion:reduce){.hero__desktop-video video{display:none;}}
