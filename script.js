@@ -1,9 +1,17 @@
 (() => {
   const preloader = document.getElementById('preloader');
-  const hideLoader = () => window.setTimeout(() => preloader?.classList.add('is-hidden'), 350);
+  let loaderDismissed = false;
+  const hideLoader = () => {
+    if (loaderDismissed || !preloader) return;
+    loaderDismissed = true;
+    window.setTimeout(() => {
+      preloader.classList.add('is-hidden');
+      window.setTimeout(() => preloader.remove(), 520);
+    }, 180);
+  };
   if (document.readyState === 'complete') hideLoader();
   else window.addEventListener('load', hideLoader, { once: true });
-  window.setTimeout(hideLoader, 1800);
+  window.setTimeout(hideLoader, 2200);
 
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -68,6 +76,64 @@
     if (opened) opened.opener = null;
     else window.location.href = whatsappUrl;
   });
+
+  // Interactive parcel request: destination + parcel type are carried into WhatsApp.
+  const parcelConfig = document.getElementById('parcelConfig');
+  if (parcelConfig) {
+    const destinations = [...parcelConfig.querySelectorAll('[data-destination]')];
+    const types = [...parcelConfig.querySelectorAll('[data-kind]')];
+    const parcelArt = document.getElementById('parcelArt');
+    const visualDestination = document.getElementById('parcelVisualDestination');
+    const parcelChoice = document.getElementById('parcelChoice');
+    const parcelRouteLabel = document.getElementById('parcelRouteLabel');
+    const parcelSubmit = document.getElementById('parcelSubmit');
+    let selectedDestination = 'Лондон';
+    let selectedKind = 'box';
+    let selectedKindLabel = 'Коробка / посилка';
+
+    const syncParcelSelection = () => {
+      destinations.forEach(button => {
+        const active = button.dataset.destination === selectedDestination;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      types.forEach(button => {
+        const active = button.dataset.kind === selectedKind;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      if (parcelArt) parcelArt.dataset.kind = selectedKind;
+      if (visualDestination) visualDestination.textContent = `TO ${selectedDestination}`.toLocaleUpperCase('uk-UA');
+      if (parcelChoice) parcelChoice.textContent = `${selectedKindLabel} · ${selectedDestination}`;
+      if (parcelRouteLabel) parcelRouteLabel.textContent = `Долина → ${selectedDestination}`;
+    };
+
+    destinations.forEach(button => button.addEventListener('click', () => {
+      selectedDestination = button.dataset.destination;
+      syncParcelSelection();
+    }));
+    types.forEach(button => button.addEventListener('click', () => {
+      selectedKind = button.dataset.kind;
+      selectedKindLabel = button.dataset.label;
+      syncParcelSelection();
+    }));
+    parcelSubmit?.addEventListener('click', () => {
+      const message = [
+        'Доброго дня! Хочу уточнити відправлення посилки через TRANSFER TO UK.',
+        '',
+        'Місто відправлення: Долина.',
+        'Відділення: Нова пошта №1.',
+        `Місто прибуття: ${selectedDestination}.`,
+        `Тип відправлення: ${selectedKindLabel}.`,
+        '',
+        'Підкажіть, будь ласка, чи можлива доставка, а також умови та вартість.'
+      ].join('\\n');
+      const url = `https://wa.me/380988536842?text=${encodeURIComponent(message)}`;
+      const opened = window.open(url, '_blank', 'noopener,noreferrer');
+      if (!opened) window.location.href = url;
+    });
+    syncParcelSelection();
+  }
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
